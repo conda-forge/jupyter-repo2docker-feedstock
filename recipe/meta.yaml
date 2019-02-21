@@ -1,4 +1,4 @@
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: jupyter-repo2docker
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyter-repo2docker/jupyter-repo2docker-{{ version }}.tar.gz
-  sha256: cf93ddf283de8c6b8f4ad983f8bf9b7b2a2c37812e387c245f8ba229d4f180c4
+  sha256: 0aa2a49f85cef8ba8a6b2a1bad06ebf258b1307378afc9e7bd95df54666b8adb
 
 build:
   number: 0
