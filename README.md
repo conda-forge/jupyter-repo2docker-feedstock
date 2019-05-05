@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About jupyter-repo2docker
 =========================
 
@@ -18,8 +14,17 @@ Summary: Repo2docker: Turn code repositories into Jupyter enabled Docker Images
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/jupyter-repo2docker-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/jupyter-repo2docker-feedstock)
+
+<table><tr>
+    
+    <td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3037&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/jupyter-repo2docker-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
