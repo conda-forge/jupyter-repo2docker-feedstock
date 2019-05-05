@@ -23,11 +23,13 @@ requirements:
   run:
     - python >=3.4
     - docker-py
+    - traitlets
+    - python-json-logger
     - escapism
     - jinja2
-    - python-json-logger
     - ruamel.yaml >=0.15
-    - traitlets
+    - toml
+    - semver
 
 test:
   imports:
