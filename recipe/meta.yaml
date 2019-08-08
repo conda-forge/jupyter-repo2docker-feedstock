@@ -1,4 +1,4 @@
-{% set version = "0.9.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: jupyter-repo2docker
@@ -6,22 +6,22 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyter-repo2docker/jupyter-repo2docker-{{ version }}.tar.gz
-  sha256: d55e7907808f42cfeb593076c7886d6ef280b0263cebbd4240d1beb45d5c7d24
+  sha256: 7965262913be6be60e64c8016f5f3d4bf93701f2787209215859d73b2adbc05a
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - jupyter-repo2docker = repo2docker.__main__:main
     - repo2docker = repo2docker.__main__:main
 
 requirements:
   host:
-    - python >=3.4
+    - python >=3.5
     - pip
   run:
-    - python >=3.4
+    - python >=3.5
     - docker-py
     - traitlets
     - python-json-logger
