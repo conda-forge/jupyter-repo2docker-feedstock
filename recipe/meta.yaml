@@ -11,17 +11,17 @@ source:
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - jupyter-repo2docker = repo2docker.__main__:main
     - repo2docker = repo2docker.__main__:main
 
 requirements:
   host:
-    - python >=3.4
+    - python >=3.5
     - pip
   run:
-    - python >=3.4
+    - python >=3.5
     - docker-py
     - traitlets
     - python-json-logger
