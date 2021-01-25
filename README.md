@@ -5,11 +5,9 @@ Home: https://repo2docker.readthedocs.io/en/latest/
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter-repo2docker-feedstock/blob/master/LICENSE.txt)
 
 Summary: Repo2docker: Turn code repositories into Jupyter enabled Docker Images
-
-
 
 Current build status
 ====================

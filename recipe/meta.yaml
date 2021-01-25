@@ -1,4 +1,4 @@
-{% set version = "0.11.0" %}
+{% set version = "2021.1.0" %}
 
 package:
   name: jupyter-repo2docker
@@ -6,30 +6,31 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyter-repo2docker/jupyter-repo2docker-{{ version }}.tar.gz
-  sha256: 7fc2edf0cda1e46f2e7553bfb84a47e6d141b8dac393268ef01ee3504ca6ad94
+  sha256: 3e3e671407ef2a7f7695338dc6ce2ca9cc75683ffc7a543829cf119564aca802
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - jupyter-repo2docker = repo2docker.__main__:main
     - repo2docker = repo2docker.__main__:main
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
   run:
-    - python >=3.5
+    - python >=3.6
     - docker-py
-    - traitlets
-    - python-json-logger
     - escapism
     - jinja2
+    - python-json-logger
+    - requests
     - ruamel.yaml >=0.15
-    - toml
     - semver
+    - toml
+    - traitlets
 
 test:
   imports:
@@ -39,15 +40,18 @@ test:
     - repo2docker.buildpacks.legacy
     - repo2docker.buildpacks.python
   commands:
+    - pip check
     - jupyter-repo2docker --help
     - repo2docker --help
+  requires:
+    - pip
 
 about:
   home: https://repo2docker.readthedocs.io/en/latest/
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: "Repo2docker: Turn code repositories into Jupyter enabled Docker Images"
+  summary: 'Repo2docker: Turn code repositories into Jupyter enabled Docker Images'
 
 extra:
   recipe-maintainers:
