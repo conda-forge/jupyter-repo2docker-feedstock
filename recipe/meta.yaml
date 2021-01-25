@@ -18,18 +18,19 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
   run:
-    - python >=3.5
+    - python >=3.6
     - docker-py
-    - traitlets
-    - python-json-logger
     - escapism
     - jinja2
+    - python-json-logger
+    - requests
     - ruamel.yaml >=0.15
-    - toml
     - semver
+    - toml
+    - traitlets
 
 test:
   imports:
@@ -39,8 +40,11 @@ test:
     - repo2docker.buildpacks.legacy
     - repo2docker.buildpacks.python
   commands:
+    - pip check
     - jupyter-repo2docker --help
     - repo2docker --help
+  requires:
+    - pip
 
 about:
   home: https://repo2docker.readthedocs.io/en/latest/
