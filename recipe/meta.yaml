@@ -1,4 +1,4 @@
-{% set version = "2021.3.0" %}
+{% set version = "2021.8.0" %}
 
 package:
   name: jupyter-repo2docker
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyter-repo2docker/jupyter-repo2docker-{{ version }}.tar.gz
-  sha256: 42e0cf67181bdd03b54dabde695befec0586ed68a4ec1240104e209997d776c4
+  sha256: 9d1b3c3ec7944ea6b0a234d6fa77293a2d1ed1c080eba8466aba94f811b3465d
 
 build:
   number: 0
@@ -22,8 +22,11 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - docker-py
+    - chardet
+    - docker-py !=5.0.0
+    - entrypoints
     - escapism
+    - iso8601
     - jinja2
     - python-json-logger
     - requests
@@ -36,9 +39,6 @@ test:
   imports:
     - repo2docker
     - repo2docker.buildpacks
-    - repo2docker.buildpacks.conda
-    - repo2docker.buildpacks.legacy
-    - repo2docker.buildpacks.python
   commands:
     - pip check
     - jupyter-repo2docker --help
