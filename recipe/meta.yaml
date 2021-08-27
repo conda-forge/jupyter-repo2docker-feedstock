@@ -22,8 +22,11 @@ requirements:
     - pip
   run:
     - python >=3.6
-    - docker-py
+    - chardet
+    - docker-py !=5.0.0
+    - entrypoints
     - escapism
+    - iso8601
     - jinja2
     - python-json-logger
     - requests
@@ -36,9 +39,6 @@ test:
   imports:
     - repo2docker
     - repo2docker.buildpacks
-    - repo2docker.buildpacks.conda
-    - repo2docker.buildpacks.legacy
-    - repo2docker.buildpacks.python
   commands:
     - pip check
     - jupyter-repo2docker --help
