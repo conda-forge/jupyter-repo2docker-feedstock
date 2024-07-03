@@ -1,12 +1,12 @@
-{% set version = "2024.3.0" %}
+{% set version = "2024.7.0" %}
 
 package:
   name: jupyter-repo2docker
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jupyter-repo2docker/jupyter-repo2docker-{{ version }}.tar.gz
-  sha256: 8bb8c38e8b5b61e96200f40fa8d64c3f0dafc9c185b64fd3b540b423d2e1cc11
+  url: https://pypi.io/packages/source/j/jupyter-repo2docker/jupyter_repo2docker-{{ version }}.tar.gz
+  sha256: 2ee9cf80f8e9fd4bff30ddb5fbd8929af2107e012a9fddd0489879af6d66a81e
 
 build:
   number: 0
@@ -18,10 +18,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.7
     - pip
   run:
-    - python >=3.6
+    - python >=3.7
     - chardet
     - docker-py !=5.0.0
     - entrypoints
