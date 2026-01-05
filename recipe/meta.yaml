@@ -23,7 +23,6 @@ requirements:
     - pip
   run:
     - packaging
-    - pypi-pkg-test ==0.0.4
     - python >={{ python_min }}
     - chardet
     - docker-py !=5.0.0
