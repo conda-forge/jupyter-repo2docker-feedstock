@@ -1,5 +1,5 @@
 {% set name = "jupyter-repo2docker" %}
-{% set version = "2025.12.0" %}
+{% set version = "2026.4.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/jupyter_repo2docker-{{ version }}.tar.gz
-  sha256: 64571ba5e1d04845eeb4fa9823bae681402e706afb29f966d5ddeb272d60d0cf
+  sha256: ad0d25dfcdde50117efae500281a84285a8c4baff8ac755872ef96139350684a
 
 build:
   entry_points:
@@ -24,6 +24,8 @@ requirements:
     - setuptools
     - pip
   run:
+    - charset-normalizer
+    - pypi-pkg-test ==0.0.4
     - python >={{ python_min }}
     - chardet
     - docker-py !=5.0.0
